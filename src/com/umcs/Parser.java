@@ -40,16 +40,16 @@ public class Parser {
                 for (int k = 0; k < odczyty.size(); k++) {
                     switch (i) {
                         case 1:
-                            pomiary.get((j - 1) * 150 + k).setZ0(odczyty.get(k));
+                            pomiary.get((j - 1) * 150 + k).setZ3(odczyty.get(k));
                             break;
                         case 2:
-                            pomiary.get((j - 1) * 150 + k).setZ1(odczyty.get(k));
-                            break;
-                        case 3:
                             pomiary.get((j - 1) * 150 + k).setZ2(odczyty.get(k));
                             break;
+                        case 3:
+                            pomiary.get((j - 1) * 150 + k).setZ1(odczyty.get(k));
+                            break;
                         case 4:
-                            pomiary.get((j - 1) * 150 + k).setZ3(odczyty.get(k));
+                            pomiary.get((j - 1) * 150 + k).setZ0(odczyty.get(k));
                             break;
                     }
                 }
