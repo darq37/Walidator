@@ -1,40 +1,40 @@
 package com.umcs;
 
 public class Pomiar {
-    private Float z0, z1, z2, z3;
+    private Float SURFACE_1, SURFACE_2, SURFACE_3, SURFACE_4;
     private Float x, y;
 
-    public Pomiar(Float x, Float y, Float z0, Float z1, Float z2, Float z3) {
+    public Pomiar(Float x, Float y, Float SURFACE_1, Float SURFACE_2, Float SURFACE_3, Float SURFACE_4) {
         this.x = x;
         this.y = y;
-        this.z0 = z0;
-        this.z1 = z1;
-        this.z2 = z2;
-        this.z3 = z3;
+        this.SURFACE_1 = SURFACE_1;
+        this.SURFACE_2 = SURFACE_2;
+        this.SURFACE_3 = SURFACE_3;
+        this.SURFACE_4 = SURFACE_4;
     }
 
-    public Float getZ1() {
-        return z1;
+    public Float getSURFACE_2() {
+        return SURFACE_2;
     }
 
-    public void setZ1(Float z1) {
-        this.z1 = z1;
+    public void setSURFACE_2(Float SURFACE_2) {
+        this.SURFACE_2 = SURFACE_2;
     }
 
-    public Float getZ2() {
-        return z2;
+    public Float getSURFACE_3() {
+        return SURFACE_3;
     }
 
-    public void setZ2(Float z2) {
-        this.z2 = z2;
+    public void setSURFACE_3(Float SURFACE_3) {
+        this.SURFACE_3 = SURFACE_3;
     }
 
-    public Float getZ3() {
-        return z3;
+    public Float getSURFACE_4() {
+        return SURFACE_4;
     }
 
-    public void setZ3(Float z3) {
-        this.z3 = z3;
+    public void setSURFACE_4(Float SURFACE_4) {
+        this.SURFACE_4 = SURFACE_4;
     }
 
     public Float getX() {
@@ -53,16 +53,16 @@ public class Pomiar {
         this.y = y;
     }
 
-    public Float getZ0() {
-        return z0;
+    public Float getSURFACE_1() {
+        return SURFACE_1;
     }
 
-    public void setZ0(Float z0) {
-        this.z0 = z0;
+    public void setSURFACE_1(Float SURFACE_1) {
+        this.SURFACE_1 = SURFACE_1;
     }
 
     @Override
     public String toString() {
-        return "[" + x + "]\t\t[" + y + "]\t\t[" + z0 + "]\t\t[" + z1 + "]\t\t[" + z2 + "]\t\t[" + z3 + "]";
+        return "[" + x + "]\t\t[" + y + "]\t\t[" + SURFACE_1 + "]\t\t[" + SURFACE_2 + "]\t\t[" + SURFACE_3 + "]\t\t[" + SURFACE_4 + "]";
     }
 }

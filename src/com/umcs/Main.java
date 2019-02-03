@@ -1,13 +1,16 @@
 package com.umcs;
 
 import java.io.IOException;
-import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        List<Pomiar> pomiary = Parser.read("Model.vmg");
-        pomiary.forEach(System.out::println);
-
+        Pomiar[][] pomiary = Parser.read("Model.vmg");
+        for (int i = 0; i < 150; i++) {
+            System.out.println();
+            for (int j = 0; j < 150; j++) {
+                System.out.print("\t" + pomiary[i][j].getSURFACE_4() + "\t");
+            }
+        }
     }
 }
