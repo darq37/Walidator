@@ -22,7 +22,7 @@ public class Parser {
 
         for (int i = 0; i < 150; i++) {
             for (int j = 0; j < 150; j++) {
-                pomiary1[i][j] = new Pomiar(x[i], y[j], 0f, 0f, 0f, 0f, false);
+                pomiary1[149-j][i] = new Pomiar(x[i], y[j], 0f, 0f, 0f, 0f, false);
             }
         }
 
@@ -39,16 +39,16 @@ public class Parser {
                 for (int k = 0; k < odczyty.size(); k++) {
                     switch (i) {
                         case 1:
-                            pomiary1[j-1][k].setSURFACE_4(odczyty.get(k));
+                            pomiary1[149-k][j-1].setSURFACE_4(odczyty.get(k));
                             break;
                         case 2:
-                            pomiary1[j-1][k].setSURFACE_3(odczyty.get(k));
+                            pomiary1[149-k][j-1].setSURFACE_3(odczyty.get(k));
                             break;
                         case 3:
-                            pomiary1[j-1][k].setSURFACE_2(odczyty.get(k));
+                            pomiary1[149-k][j-1].setSURFACE_2(odczyty.get(k));
                             break;
                         case 4:
-                            pomiary1[j-1][k].setSURFACE_1(odczyty.get(k));
+                            pomiary1[149-k][j-1].setSURFACE_1(odczyty.get(k));
                             break;
                     }
                 }
