@@ -22,7 +22,7 @@ public class Parser {
 
         for (int i = 0; i < 150; i++) {
             for (int j = 0; j < 150; j++) {
-                pomiary1[i][j] = new Pomiar(x[i], y[j], 0f, 0f, 0f, 0f);
+                pomiary1[i][j] = new Pomiar(x[i], y[j], 0f, 0f, 0f, 0f, false);
             }
         }
 

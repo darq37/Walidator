@@ -3,14 +3,27 @@ package com.umcs;
 public class Pomiar {
     private Float SURFACE_1, SURFACE_2, SURFACE_3, SURFACE_4;
     private Float x, y;
+    private Boolean active;
 
-    public Pomiar(Float x, Float y, Float SURFACE_1, Float SURFACE_2, Float SURFACE_3, Float SURFACE_4) {
+
+    private Boolean bad;
+
+    public Boolean getBad() {
+        return bad;
+    }
+
+    public void setBad(Boolean bad) {
+        this.bad = bad;
+    }
+
+    public Pomiar(Float x, Float y, Float SURFACE_1, Float SURFACE_2, Float SURFACE_3, Float SURFACE_4, Boolean bad) {
         this.x = x;
         this.y = y;
         this.SURFACE_1 = SURFACE_1;
         this.SURFACE_2 = SURFACE_2;
         this.SURFACE_3 = SURFACE_3;
         this.SURFACE_4 = SURFACE_4;
+        this.bad = bad;
     }
 
     public Float getSURFACE_2() {
@@ -63,6 +76,14 @@ public class Pomiar {
 
     @Override
     public String toString() {
-        return "[" + x + "]\t\t[" + y + "]\t\t[" + SURFACE_1 + "]\t\t[" + SURFACE_2 + "]\t\t[" + SURFACE_3 + "]\t\t[" + SURFACE_4 + "]";
+        return "[" + x + "]\t[" + y + "]\t";
+    }
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
     }
 }
