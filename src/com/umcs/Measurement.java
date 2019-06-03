@@ -4,6 +4,11 @@ public class Measurement {
     private Float firstSurface, secondSurface, thirdSurface, fourthSurface;
     private Float x, y;
     private Boolean active;
+
+    public Boolean getDisconnected() {
+        return disconnected;
+    }
+
     private Boolean disconnected;
 
     public Measurement(Float x, Float y, Float firstSurface, Float secondSurface, Float thirdSurface, Float fourthSurface, Boolean disconnected) {
@@ -14,6 +19,14 @@ public class Measurement {
         this.thirdSurface = thirdSurface;
         this.fourthSurface = fourthSurface;
         this.disconnected = disconnected;
+    }
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
     }
 
     public Boolean isDisconnected() {
@@ -76,12 +89,16 @@ public class Measurement {
         return active;
     }
 
-    public void setActive(Boolean active) {
-        this.active = active;
-    }
-
     @Override
     public String toString() {
         return "[" + x + "]\t[" + y + "]\t";
     }
+
+    public int aktywne() {
+        if (!this.getActive()) {
+            return 1;
+        }else return 0;
+    }
 }
+
+

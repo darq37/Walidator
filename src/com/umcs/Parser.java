@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Parser {
-    public static final String ACTIVE_VMG = "Active.vmg";
+    public static final String ACTIVE_VMG = "akt.vmg";
     public static final String MODEL_VMG = "Model.vmg";
 
     static Measurement[][] markActiveElements(Measurement[][] measurements) throws IOException {

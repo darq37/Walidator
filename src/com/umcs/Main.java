@@ -6,9 +6,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Main {
-    public static final Float OFFSET = 5.07f;
+    public static final Float OFFSET = 2.5f;
+    public static final String OUTPUT_FILE_LAYER_1 = "s1.txt";
     public static final String OUTPUT_FILE_LAYER_2 = "s2.txt";
     public static final String OUTPUT_FILE_LAYER_3 = "s3.txt";
+    public static final String OUTPUT_FILE_LAYER_4 = "s4.txt";
+    public static final String MODEL = "Model.txt";
 
     public static void main(String[] args) throws IOException {
         Measurement[][] measurements = Parser.parseModel();
@@ -26,20 +29,41 @@ public class Main {
         System.out.println("\nDisconnected elements after fix #: " + disconnectedElementsAfterFix.size());
 
         System.out.println("Saving output to files...");
-        PrintWriter pw1 = new PrintWriter(OUTPUT_FILE_LAYER_2);
-        for (int i = 0; i < 150; i++) {
-            for (int j = 0; j < 150; j++) {
-                Measurement m = measurements[i][j];
-                pw1.println(m.getX() + "," + m.getY() + "," + m.getSecondSurface());
+        PrintWriter pw1 = new PrintWriter(MODEL);
+        try {
+            for (int i = 0; i < 150; i++) {
+                for (int j = 0; j < 150; j++) {
+                    Measurement m = measurements[i][j];
+                    pw1.println(m.getX() + "," + m.getY() + "," + m.getFirstSurface()+ "," + m.getSecondSurface()+ "," + m.getThirdSurface()+ "," + m.getFourthSurface()+ "," + m.getDisconnected());
+                }
             }
+        } finally {
+            pw1.close();
         }
+
         pw1 = new PrintWriter(OUTPUT_FILE_LAYER_3);
-        for (int i = 0; i < 150; i++) {
-            for (int j = 0; j < 150; j++) {
-                Measurement m = measurements[i][j];
-                pw1.println(m.getX() + "," + m.getY() + "," + m.getThirdSurface());
+        try {
+            for (int i = 0; i < 150; i++) {
+                for (int j = 0; j < 150; j++) {
+                    Measurement m = measurements[i][j];
+                    pw1.println(m.getX() + "," + m.getY() + "," + m.getThirdSurface());
+                }
             }
+        } finally {
+            pw1.close();
         }
+        pw1 = new PrintWriter(OUTPUT_FILE_LAYER_2);
+        try {
+            for (int i = 0; i < 150; i++) {
+                for (int j = 0; j < 150; j++) {
+                    Measurement m = measurements[i][j];
+                    pw1.println(m.getX() + "," + m.getY() + "," + m.getSecondSurface());
+                }
+            }
+        } finally {
+            pw1.close();
+        }
+
         System.out.println("Done");
     }
 
